@@ -28,7 +28,7 @@ def main():
     webhook = args.webhook
     users = args.users
 
-    requests.post(webhook, data={"content": "Choosing who to do the recap between: " + users.join(", ")})
+    requests.post(webhook, data={"content": "Choosing who to do the recap between: " + ", ".join(users)})
 
     user_to_recap = choose_recap_user(users)
 
